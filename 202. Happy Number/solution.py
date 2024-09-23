@@ -24,3 +24,4 @@ class Solution:
 instance = Solution()
 print(instance.isHappy(n))
 print(2 //10)
+print("hello")
