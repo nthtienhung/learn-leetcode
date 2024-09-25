@@ -13,13 +13,13 @@ class Solution:
         return False
 
     def sumOfSquares(self, n):
+        output = 0
         while n:
-            output = 0
             lastdigit = n % 10
             output += lastdigit * lastdigit
             print(output)
             n = n // 10
-            return output
+        return output
 
 instance = Solution()
 print(instance.isHappy(n))

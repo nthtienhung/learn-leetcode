@@ -13,6 +13,28 @@ class Solution:
         self.invertTree(root.right)
 
         return root
+    #more optimized
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+            if not root:
+                return None
+            root.left, root.right = self.invertTree(root.right),self.invertTree(root.left) 
+            return root
+    
+    #neetcode
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if not root:
+            return None
+        
+        #swap children
+        temp = root.left
+        root.left = root.right
+        root.right = temp
+
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+
+        return root
+        
     #greg
     def invertTree1(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         if not root:
